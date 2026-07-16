@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando Números</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #destaque-res {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Somando Valores</h1>
+    <input type="number" name="txt1" id="txt1">
+    <input type="number" name="txt2" id="txt2">
+    <input type="button" value="Somar" onclick="somar()">
+
+    <div id="destaque-res">
+        <p>A soma dos numeros é: <strong><span id="resultado">X</span></strong></p>
+    </div>
+
+    <script>
+        var txt1 = document.getElementById('txt1')
+        var txt2 = document.getElementById('txt2')
+        function somar() {
+            var n1 = Number(txt1.value)
+            var n2 = Number(txt2.value)
+            var resultado = n1 + n2
+            document.getElementById('resultado').innerText = resultado
+            document.getElementById('destaque-res').style.display = 'block'
+        }
+    </script>
+</body>
+</html>
