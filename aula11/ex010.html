@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN</title>
+</head>
+<body>
+    <h1>Sistema de multas</h1>
+    <label for="ivelocidade">Velocidade do Carro: <input type="number" name="velocidade" id="ivelocidade"> Km/h</label>
+    <div><input type="button" value="Verificar" onclick="verificarMulta()"></div>
+    <p id="resultado"></p>
+
+    <script>
+        function verificarMulta() {
+            let velocidade = Number(document.getElementById("ivelocidade").value)
+            let resultado = document.getElementById("resultado")
+            let multa
+
+            if (velocidade > 80) {
+                if (velocidade >= 160) {
+                    multa = (velocidade - 80) * 8
+                } else {
+                    multa = (velocidade - 80) * 4
+                    if (multa < 50) {
+                        multa = 50
+                    }
+                }
+            } else {
+                multa = 0
+            }
+
+            if (multa == 0) {
+                resultado.innerHTML = `O veiculo <strong>não</strong> ultrapassou o limite de velocidade`
+            } else {
+                resultado.innerHTML = `O veiculo ultrapassou o limite de velocidade. Deve ser MULTADO. Valor da multa: <strong>R$ ${multa},00</strong>`
+            }
+        }
+    </script>
+</body>
+</html>

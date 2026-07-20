@@ -1,0 +1,39 @@
+@charset "UTF-8";
+/* tamanho das imagens: 250px */
+body {
+    background-color: lightblue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    text-align: center;
+    color: white;
+}
+
+section {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.308);
+}
+
+section > div {
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+section img#img {
+    width: 250px;
+    background-size: cover;
+    border-radius: 50%;
+}
+
+footer {
+    text-align: center;
+    font-style: italic;
+    color: white;
+}
